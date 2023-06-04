@@ -1,10 +1,13 @@
-def situp():
+def squats():
     import cv2
     import mediapipe as mp
     import numpy as np
     mp_drawing = mp.solutions.drawing_utils
     mp_pose = mp.solutions.pose
     cap = cv2.VideoCapture(0)
+    window_name = "Squats"
+    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(window_name, 1280, 960)
 
     # variables for curl counter
     cntr = 0
@@ -73,6 +76,7 @@ def situp():
                 ang1 = calculate_angle(r_hip, r_knee, r_ankle)
                 ang2 = calculate_angle(l_hip, l_knee, l_ankle)
 
+
                 # Curl counter
                 if ang1 > 160 and ang2 > 160:
                     stg = "up"
@@ -123,7 +127,7 @@ def situp():
                             (255, 255, 0), 1, cv2.LINE_AA)
                 reset_timer -= 1
 
-            cv2.imshow('Mediapipe Feed', img)
+            cv2.imshow(window_name, img)
 
             key = cv2.waitKey(10)
             if key == ord('q'):
