@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from right_rep_final import right_rep
 from left_rep_final import left_rep
-from situp import situp
+from squats import squats
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
