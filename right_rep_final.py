@@ -6,6 +6,9 @@ def right_rep():
     mp_drawing = mp.solutions.drawing_utils
     mp_pose = mp.solutions.pose
     cap = cv2.VideoCapture(0)
+    window_name = "Right_Rep"
+    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(window_name, 1280, 960)
 
     # variables for curl counter
     cntr = 0
@@ -116,7 +119,7 @@ def right_rep():
                             (255, 255, 0), 1, cv2.LINE_AA)
                 reset_timer -= 1
 
-            cv2.imshow('Mediapipe Feed', img)
+            cv2.imshow(window_name, img)
 
             key = cv2.waitKey(10)
             if key == ord('q'):
