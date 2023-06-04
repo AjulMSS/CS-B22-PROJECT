@@ -80,13 +80,13 @@ def right_rep():
                 pass
 
             # Rendering the curl counter
-            cv2.rectangle(img, (0, 0), (225, 73),  # Creating the rectangle to
-                          (245, 117, 16), -1)      # to show the counter
+            cv2.rectangle(img, (0, 0), (1280, 73),  # Creating the rectangle to
+                          (0, 0, 0),-1)             # to show the counter
 
             # Representing the required data
             cv2.putText(img, 'REPS', (15, 15),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5,
-                        (0, 0, 0), 1, cv2.LINE_AA)
+                        (255, 255, 255), 1, cv2.LINE_AA)
             cv2.putText(img, str(cntr),
                         (30, 60),
                         cv2.FONT_HERSHEY_SIMPLEX, 1,
@@ -94,7 +94,7 @@ def right_rep():
 
             cv2.putText(img, 'STAGE', (95, 15),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5,
-                        (0, 0, 0), 1, cv2.LINE_AA)
+                        (255, 255, 255), 1, cv2.LINE_AA)
             cv2.putText(img, stg,
                         (80, 60),
                         cv2.FONT_HERSHEY_SIMPLEX, 1,
@@ -114,9 +114,9 @@ def right_rep():
 
             if reset_timer > 0:
                 cv2.putText(img, reset_message,
-                            (225, 60),
-                            cv2.FONT_HERSHEY_TRIPLEX, 1,
-                            (255, 255, 0), 1, cv2.LINE_AA)
+                            (200, 60),
+                            cv2.FONT_HERSHEY_TRIPLEX, 0.75,
+                            (255, 255, 255), 1, cv2.LINE_AA)
                 reset_timer -= 1
 
             cv2.imshow(window_name, img)
